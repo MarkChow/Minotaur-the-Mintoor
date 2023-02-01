@@ -111,9 +111,8 @@ class AccountManager:
             'nonce': nonce,
             'to': address_to_send,
             'value': self.web3.toWei(amount, 'ether'),
-            'maxFeePerGas': self.web3.toWei(40, "gwei"), 
-            'maxPriorityFeePerGas':  self.web3.toWei(2, "gwei"),
             'from': self.web3.toChecksumAddress(sender_address),
+            'gasPrice': self.web3.toWei('5', 'gwei'),            
             'gas': 21000,
             'chainId': self.web3.eth.chain_id
         }
