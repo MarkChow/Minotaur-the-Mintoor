@@ -112,11 +112,12 @@ class MintManager():
         while not minter.is_mint_ready():
             sleep(0.00000001)
 
-        minter.pre_mint()
+        for i in range(50):
+            minter.pre_mint()
 
-        minter.mint()
+            minter.mint()
 
-        minter.post_mint()
+            minter.post_mint()
 
     def _check_is_config_ready(self) -> bool:
         if self.mint_module is None:
